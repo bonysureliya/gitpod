@@ -46,7 +46,7 @@ function UsageView({ attributionId }: UsageViewProps) {
     const location = useLocation();
     useEffect(() => {
         const match = /#(\d{4}-\d{2}-\d{2}):(\d{4}-\d{2}-\d{2})/.exec(location.hash);
-        if (match) {
+        if (!match) {
            try {                 
                     const today = new Date();
                     const prevMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
